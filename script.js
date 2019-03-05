@@ -31,6 +31,15 @@ const val = function(element) {
     return value;
 };
 
+// var reset = document.getElementById("#reset")
+// reset.addEventListener("click", function(){
+//     winner = null;
+//     for (var i = 0; i < boxesArr.length; i++){
+//         boxesArr[i].innerHTML = "";
+//     }
+
+// })
+
 val(boxes.a1);
 
 const checkUserWinner = function() {
@@ -47,6 +56,11 @@ const checkUserWinner = function() {
             node = document.createElement("h1");
             node.textContent = "User Wins!";
             document.body.appendChild(node);
+            // button = document.createElement("div");
+            // button.innerHTML = `
+            //     <button id="reset">Reset</button>
+            // `
+            // document.body.appendChild(button);
         default: 
             console.log("No Winner");
     }
@@ -66,6 +80,11 @@ const checkCompWinner = function() {
             node = document.createElement("h1");
             node.textContent = "Computer Wins!";
             document.body.appendChild(node);
+            // button = document.createElement("div");
+            // button.innerHTML = `
+            //     <button id="reset">Reset</button>
+            // `
+            // document.body.appendChild(button);
             break;
         default: 
             console.log("No Winner");
@@ -77,7 +96,7 @@ const checkCompWinner = function() {
  boxesArr.forEach( function(box) {
      console.log(box)
     box.addEventListener("click", function() {
-        if(!val(box)) {
+        if(val(box) === "" && !winner) {
             event.target.innerHTML = "X";
             checkUserWinner();
             if(winner !== "user") {
@@ -94,11 +113,14 @@ const checkCompWinner = function() {
                 }
             }
 
+        } else if(winner) {
+            alert("game over");
         } else {
             alert("That box is taken");
         }
     });
 });
+
 
 
 // game loop to start the game
