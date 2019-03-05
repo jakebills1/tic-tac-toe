@@ -34,7 +34,7 @@ const val = function(element) {
 val(boxes.a1);
 
 const checkUserWinner = function() {
-    switch("xxx") {
+    switch("XXX") {
         case val(boxes.a1) + val(boxes.a2) + val(boxes.a3):
         case val(boxes.b1) + val(boxes.b2) + val(boxes.b3):
         case val(boxes.c1) + val(boxes.c2) + val(boxes.c3):
@@ -50,7 +50,7 @@ const checkUserWinner = function() {
 };
 
 const checkCompWinner = function() {
-    switch("ooo") {
+    switch("OOO") {
         case val(a1) + val(a2) + val(a3):
         case val(b1) + val(b2) + val(b3):
         case val(c1) + val(c2) + val(c3):
@@ -75,9 +75,13 @@ const checkCompWinner = function() {
             checkUserWinner();
             if(winner !== "user") {
                 console.log("comp turn");
+                let selectedBox;
+                    boxItem = boxesArr[Math.floor(Math.random() * 10)];
+                    box = val(boxItem)
+                    if(box === "")
+                    boxItem.innerHTML = "O";
+                console.log(selectedBox);
             }
-
-
 
         } else {
             alert("That box is taken");
