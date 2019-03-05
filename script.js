@@ -82,20 +82,16 @@ const checkCompWinner = function() {
             checkUserWinner();
             if(winner !== "user") {
                 console.log("comp turn");
-                let selectedBox;
-
-                    box = "";
-                    while(true) {
-                        boxItem = boxesArr[Math.floor(Math.random() * 9)];
-                        box = val(boxItem);
-                        if(box === "") {
-                            // setTimeout(function() {
-                                boxItem.innerHTML = "O";
-                                checkCompWinner()
-                                break;
-                            // }, 2000);
-                        }
+                box = "";
+                while(true) {
+                    boxItem = boxesArr[Math.floor(Math.random() * 9)];
+                    box = val(boxItem);
+                    if(box === "") {
+                        boxItem.innerHTML = "O";
+                        checkCompWinner()
+                        break;
                     }
+                }
             }
 
         } else {
