@@ -59,6 +59,7 @@ boxes.forEach( function(box) {
     box.addEventListener("click", function() {
         if(!val(box)) {
             event.target.innerHTML = "x";
+            debugger
             checkUserWinner();
             if(winner !== "user") {
                 console.log("comp turn");
