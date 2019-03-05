@@ -71,7 +71,7 @@ const checkCompWinner = function() {
      console.log(box)
     box.addEventListener("click", function() {
         if(!val(box)) {
-            event.target.innerHTML = "x";
+            event.target.innerHTML = "X";
             checkUserWinner();
             if(winner !== "user") {
                 console.log("comp turn");
