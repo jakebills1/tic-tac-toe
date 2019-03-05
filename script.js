@@ -40,6 +40,9 @@ const checkUserWinner = function() {
         case val(boxes.c1) + val(boxes.c2) + val(boxes.c3):
         case val(boxes.a1) + val(boxes.b2) + val(boxes.c3):
         case val(boxes.c1) + val(boxes.b2) + val(boxes.a3):
+        case val(boxes.a1) + val(boxes.b1) + val(boxes.c1):
+        case val(boxes.a2) + val(boxes.b2) + val(boxes.c2):
+        case val(boxes.c3) + val(boxes.b3) + val(boxes.a3):
             winner = "user";
             node = document.createElement("h1");
             node.textContent = "User Wins!";
@@ -51,13 +54,17 @@ const checkUserWinner = function() {
 
 const checkCompWinner = function() {
     switch("OOO") {
-        case val(a1) + val(a2) + val(a3):
-        case val(b1) + val(b2) + val(b3):
-        case val(c1) + val(c2) + val(c3):
-        case val(a1) + val(b2) + val(c3):
-        case val(c1) + val(b2) + val(a3):
+        case val(boxes.a1) + val(boxes.a2) + val(boxes.a3):
+        case val(boxes.b1) + val(boxes.b2) + val(boxes.b3):
+        case val(boxes.c1) + val(boxes.c2) + val(boxes.c3):
+        case val(boxes.a1) + val(boxes.b2) + val(boxes.c3):
+        case val(boxes.c1) + val(boxes.b2) + val(boxes.a3):
+        case val(boxes.a1) + val(boxes.b1) + val(boxes.c1):
+        case val(boxes.a2) + val(boxes.b2) + val(boxes.c2):
+        case val(boxes.c3) + val(boxes.b3) + val(boxes.a3):
+            winner = "computer";
             node = document.createElement("h1");
-            node.textContent = "User Wins!";
+            node.textContent = "Computer Wins!";
             document.body.appendChild(node);
             break;
         default: 
@@ -76,11 +83,19 @@ const checkCompWinner = function() {
             if(winner !== "user") {
                 console.log("comp turn");
                 let selectedBox;
-                    boxItem = boxesArr[Math.floor(Math.random() * 10)];
-                    box = val(boxItem)
-                    if(box === "")
-                    boxItem.innerHTML = "O";
-                console.log(selectedBox);
+
+                    box = "";
+                    while(true) {
+                        boxItem = boxesArr[Math.floor(Math.random() * 9)];
+                        box = val(boxItem);
+                        if(box === "") {
+                            // setTimeout(function() {
+                                boxItem.innerHTML = "O";
+                                checkCompWinner()
+                                break;
+                            // }, 2000);
+                        }
+                    }
             }
 
         } else {
