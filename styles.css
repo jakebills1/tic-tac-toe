@@ -9,7 +9,8 @@ body{
   width: 150px;
   border-bottom: 5px solid;
   border-right: 5px solid;
-
+ text-align: center;
+ font-size: 150px;
 }
 .a2{
   height: 150px;
@@ -17,12 +18,17 @@ body{
   border-bottom: 5px solid;
   border-right: 5px solid;
   border-left: 5px solid;
+  text-align: center;
+  font-size: 150px;
+
 }
 .a3{
   height: 150px;
   width: 150px;
   border-bottom: 5px solid;
   border-left: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
 
 .b1{
@@ -31,11 +37,15 @@ body{
   border-bottom: 5px solid;
   border-right: 5px solid;
   border-top: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
 .b2{
   height: 150px;
   width: 150px;
   border: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
 .b3{
   height: 150px;
@@ -43,6 +53,9 @@ body{
   border-bottom: 5px solid;
   border-left: 5px solid;
   border-top: 5px solid;
+  text-align: center;
+  font-size: 150px;
+  
 }
 
 .c1{
@@ -50,6 +63,8 @@ body{
   width: 150px;
   border-top: 5px solid;
   border-right: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
 .c2{
   height: 150px;
@@ -57,10 +72,14 @@ body{
   border-top: 5px solid;
   border-right: 5px solid;
   border-left: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
 .c3{
   height: 150px;
   width: 150px;
   border-top: 5px solid;
   border-left: 5px solid;
+  text-align: center;
+  font-size: 150px;
 }
