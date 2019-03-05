@@ -6,13 +6,25 @@ boxes = {
     a1: document.querySelector(".a1"), 
     a2: document.querySelector(".a2"), 
     a3: document.querySelector(".a3"), 
-    b1: document.querySelector(".a4"), 
-    b2: document.querySelector(".a5"), 
-    b3: document.querySelector(".a6"), 
-    c1: document.querySelector(".a7"), 
-    c2: document.querySelector(".a8"), 
-    c3: document.querySelector(".a9"), 
+    b1: document.querySelector(".b1"), 
+    b2: document.querySelector(".b2"), 
+    b3: document.querySelector(".b3"), 
+    c1: document.querySelector(".c1"), 
+    c2: document.querySelector(".c2"), 
+    c3: document.querySelector(".c3"), 
 };
+
+boxesArr = [
+    document.querySelector(".a1"), 
+    document.querySelector(".a2"), 
+    document.querySelector(".a3"), 
+    document.querySelector(".b1"), 
+    document.querySelector(".b2"), 
+    document.querySelector(".b3"), 
+    document.querySelector(".c1"), 
+    document.querySelector(".c2"), 
+    document.querySelector(".c3"), 
+];
 
 const val = function(element) {
     value = element.innerText;
@@ -23,11 +35,11 @@ val(boxes.a1);
 
 const checkUserWinner = function() {
     switch("xxx") {
-        case val(a1) + val(a2) + val(a3):
-        case val(b1) + val(b2) + val(b3):
-        case val(c1) + val(c2) + val(c3):
-        case val(a1) + val(b2) + val(c3):
-        case val(c1) + val(b2) + val(a3):
+        case val(boxes.a1) + val(boxes.a2) + val(boxes.a3):
+        case val(boxes.b1) + val(boxes.b2) + val(boxes.b3):
+        case val(boxes.c1) + val(boxes.c2) + val(boxes.c3):
+        case val(boxes.a1) + val(boxes.b2) + val(boxes.c3):
+        case val(boxes.c1) + val(boxes.b2) + val(boxes.a3):
             winner = "user";
             node = document.createElement("h1");
             node.textContent = "User Wins!";
@@ -55,7 +67,8 @@ const checkCompWinner = function() {
 
 
 
-boxes.forEach( function(box) {
+ boxesArr.forEach( function(box) {
+     console.log(box)
     box.addEventListener("click", function() {
         if(!val(box)) {
             event.target.innerHTML = "x";
